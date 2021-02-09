@@ -16,3 +16,5 @@ Node.js is an open-source, cross-platform, back-end JavaScript runtime environme
 | 4 | V8 Engine | Code:[V8 Engine](basics/04_v8Engine.md) |
 | 5 | Global Object | Code:[Global Object](basics/05_globalObject.md) |
 | 6 | Function Expression | Code:[Function Expression](basics/06_functionExpression.md) |
+| 7 | Modules and require() | Code:[Modules & require()](basics/07_modulesAndRequire.md) |
+
