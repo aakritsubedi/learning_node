@@ -17,4 +17,7 @@ Node.js is an open-source, cross-platform, back-end JavaScript runtime environme
 | 5 | Global Object | Code:[Global Object](basics/05_globalObject.md) |
 | 6 | Function Expression | Code:[Function Expression](basics/06_functionExpression.md) |
 | 7 | Modules and require() | Code:[Modules & require()](basics/07_modulesAndRequire.md) |
-
+| 8 | Core Modules | Code:[Core Modules](basics/08_coreModule.md) |
+| 9 | Event Module | Code:[Event Module](basics/09_eventModule.md) **WIP** |
+| 10 | File Module | Code:[File Module](basics/10_fileModule.md) **WIP** |
+| 11 | HTTP Module | Code:[HTTP Module](basics/11_httpModule.md) **WIP** |
