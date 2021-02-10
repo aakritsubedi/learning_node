@@ -31,14 +31,14 @@ Some of the frequently used **core modules** are:
 | querystring | querystring module includes methods to deal with query string. |
 
 Some of the example of core modules are: 
-- **Event Module** 
+- **Event Module**  
 We can use **event emitter** in Node.js to create a custom events and then react to those events when they are emitted.  
 
 ![Event Module](../screenshots/eventEmitter.gif)
 
 Example file: [Event Module](./examples/08_eventModule.js) 
 
-- **FS Module**
+- **FS Module**  
 The **fs module** enables interacting with the file system. All file system operations have synchronous, callback, and promise-based forms. 
 
 ![File Module](../screenshots/fsModule.gif)
