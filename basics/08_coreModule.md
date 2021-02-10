@@ -44,3 +44,30 @@ The **fs module** enables interacting with the file system. All file system oper
 ![File Module](../screenshots/fsModule.gif)
 
 Example file: [File Module](./examples/09_fileModule.js)
+
+- **HTTP Module**  
+Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP). It is used for making a web server to handle requests and provide responses. There are two modules mentioned below: 
+
+**http:** https://nodejs.org/api/http.html   
+**https:** https://nodejs.org/api/https.html  
+
+Both these modules are similar but when we want to work on a secure module then we are going to use https. And for which we need to supply a secure certificate whereas for http this is not needed. 
+
+Our first server... 
+```javascript
+const http = require('http');
+
+// Creating a server
+const server  = http.createServer(function(req, res) {
+  res.writeHead(200, { 'Content-Type': 'text/plain'});
+  res.end('Our first server...');
+});
+
+const PORT = 3000;
+server.listen(PORT, '127.0.0.1');
+console.log('The server is listening at PORT ' + PORT);
+```
+
+![First Server](../screenshots/firstServer.gif)
+
+Example file: [HTTP Module](./examples/10_httpModule.js)
