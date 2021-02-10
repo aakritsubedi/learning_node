@@ -29,3 +29,18 @@ Some of the frequently used **core modules** are:
 | fs | fs module includes classes, methods, and events to work with file I/O. |
 | util | util module includes utility functions useful for programmers. |
 | querystring | querystring module includes methods to deal with query string. |
+
+Some of the example of core modules are: 
+- **Event Module** 
+We can use **event emitter** in Node.js to create a custom events and then react to those events when they are emitted.  
+
+![Event Module](../screenshots/eventEmitter.gif)
+
+Example file: [Event Module](./examples/08_eventModule.js) 
+
+- **FS Module**
+The **fs module** enables interacting with the file system. All file system operations have synchronous, callback, and promise-based forms. 
+
+![File Module](../screenshots/fsModule.gif)
+
+Example file: [File Module](./examples/09_fileModule.js)
