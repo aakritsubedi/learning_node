@@ -30,4 +30,7 @@ Example file: [Streams Example](./examples/11_streams.js)
 #### Pipes
 ![Pipes](../screenshots/pipes.gif)
 
+Also, using PIPE to write response on server
+![Pipe with the Response](../screenshots/pipeWithServer.gif)
+
 Example file: [Pipes](./examples/12_pipes.js)
