@@ -19,3 +19,4 @@ Node.js is an open-source, cross-platform, back-end JavaScript runtime environme
 | 7 | Modules and require() | Code:[Modules & require()](basics/07_modulesAndRequire.md) |
 | 8 | Core Modules | Code:[Core Modules](basics/08_coreModule.md) |
 | 9 | Buffer, Stream & Pipe | Code:[Buffer, Stream and Pipes](basics/09_terminology.md) |
+| 10 | Serving HTML pages & JSON data | Code:[HTML and JSON data](basics/10_servingHTMLandJSON.md) |
