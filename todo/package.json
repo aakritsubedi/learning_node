@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "start:dev": "nodemon src/index.js"
+    "start:dev": "nodemon src/index.js",
+    "make:migration": "yarn knex migrate:make --knexfile src/knexfile.js",
+    "make:seeder": "yarn knex seed:make --knexfile src/knexfile.js",
+    "seed": "yarn knex seed:run --knexfile src/knexfile.js",
+    "migrate": "yarn knex migrate:latest --knexfile src/knexfile.js"
   },
   "keywords": [
     "todo",

@@ -4,11 +4,14 @@
  * @param   {object} knex
  * @returns {Promise}
  */
-export function seed(knex) {
-  return knex('table_name')
+
+const tableName = 'table_name';
+
+exports.seed = function (knex) {
+  return knex(tableName)
     .del()
     .then(() => {
-      return knex('table_name').insert([
+      return knex(tableName).insert([
         {
           colName: 'rowValue',
           colName2: 'rowValue'

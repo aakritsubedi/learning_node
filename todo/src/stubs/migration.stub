@@ -4,8 +4,11 @@
  * @param   {object} knex
  * @returns {Promise}
  */
-export function up(knex) {
-  return knex.schema.createTable('table_name', table => {
+
+const tableName = 'table_name';
+
+exports.up = function up(knex) {
+  return knex.schema.createTable(tableName, table => {
     table.increments();
     table
       .timestamp('created_at')
@@ -24,6 +27,6 @@ export function up(knex) {
  * @param   {object} knex
  * @returns {Promise}
  */
-export function down(knex) {
+exports.down = function (knex) {
   return knex.schema.dropTable('table_name');
 }

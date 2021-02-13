@@ -44,7 +44,7 @@ In the directory structure shown above:
 - The `models` folder contains database model of our application
 - The `routes` folder contains code that routes to different endpoints of our application
 - The `seeds` folder contains seed data for our database
-- The `stubs` folder contains logic for stubbing our unit tests
+- The `stubs` folder contains logic for stubbing our migration and seeds
 - The `utils` folder contains all the utilities that we use throughout our application
 
 ### Configure database
@@ -66,3 +66,48 @@ $ CREATE DATABASE todo;
 ```
 
 ![Setting up the database](../screenshots/project_02.gif)
+
+### Migrations & Seeding
+
+- **Creating Tables**
+Let's create a Users and Tasks table using the knex command line tool. In the root of our project run the following commands:
+
+```shell
+$ yarn make:migration create_users_table
+$ yarn make:migration create_todos_table
+```
+And update the migration file im `migration` folder.  
+
+Refer to the following examples.  
+- [Create Todos Tables](./src/migrations/20210213193225_create_todo_table.js)
+- [Create Users Tables](./src/migrations/20210213194241_create_user_table.js)
+
+Now we can run the below command performing a migration and updating our local database:
+
+```shell
+$ yarn migrate
+```
+
+We should now have a new table named `users` & `todos` in our database.
+
+- **Seeding Your Database**
+
+Lets create some seed files in this order:
+
+```shell
+$ yarn make:seeder 01_add_users
+$ yarn make:seeder 02_add_tasks
+```
+
+Now lets insert some data into our seed scripts. Refer to following example code.
+
+- [Add Users](./src/seeds/01_add_users.js)
+- [Add Todos](./src/seeds/02_add_todos.js)
+
+Now we can run the below command in the root of our project to seed our database!
+
+```shell
+$ yarn seed
+```
+
+![Migration and Seed](../screenshots/project_03.gif)
