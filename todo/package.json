@@ -4,7 +4,8 @@
   "description": "todo api made using nodejs",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon index.js"
+    "start": "node src/index.js",
+    "start:dev": "nodemon src/index.js",
   },
   "keywords": [
     "todo",
