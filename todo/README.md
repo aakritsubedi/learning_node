@@ -46,3 +46,23 @@ In the directory structure shown above:
 - The `seeds` folder contains seed data for our database
 - The `stubs` folder contains logic for stubbing our unit tests
 - The `utils` folder contains all the utilities that we use throughout our application
+
+### Configure database
+In this series we will be using `postgreSQL` db. 
+
+- Add the necessary packages and configure the `.env` as show in `.env.example` file.
+
+```shell 
+$ yarn add knex pg
+```
+
+- Login to the postgreSQL and create the database
+
+```
+$ sudo -i -u postgres
+<enter the password>
+$ psql 
+$ CREATE DATABASE todo;
+```
+
+![Setting up the database](../screenshots/project_02.gif)
