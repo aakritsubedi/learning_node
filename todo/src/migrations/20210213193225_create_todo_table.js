@@ -9,7 +9,7 @@ const tableName = "todos";
 
 exports.up = function (knex) {
   return knex.schema.createTable(tableName, (table) => {
-    table.increments();
+    table.increments('id').primary().unsigned();
 
     table.string("title").notNull();
     table.text("description");
