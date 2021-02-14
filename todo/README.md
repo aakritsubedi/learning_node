@@ -111,3 +111,27 @@ $ yarn seed
 ```
 
 ![Migration and Seed](../screenshots/project_03.gif)
+
+- **CRUD Functionalities**
+CRUD is an acronym for Create, Read, Update and Delete. It is a set of operations we get servers to execute (POST, GET, PUT and DELETE requests respectively). This is what each operation does: 
+
+|HTTP Verb|HTTP Method|Description|
+|---------|-----------|-----------|
+|Create|POST|Make something|
+|Read|GET|Get something|
+|Update|PUT|Change something|
+|Delete|DELETE|Remove something|
+
+`POST`, `GET`, `PUT`, and `DELETE` requests let us construct RESTful APIs.  
+
+If we put CRUD, Express and Postgres together into a single diagram, this is what it would look like:
+
+![CRUD](../screenshots/crud-express-postgres.png)
+
+Refer to CRUD functionalities in following files: 
+- `Router: ` [User Router](./src/routes/users.js) 
+- `Controller: ` [User Controller](./src/controllers/users.js)
+- `Services: ` [User Service](./src/services/users.js)
+- `Model:` [User Model](./src/model/users.js)
+
+![CRUD Users](../screenshots/project_04.gif)
