@@ -1,5 +1,3 @@
-const { genSaltSync, hashSync } = require("bcrypt");
-
 const todoService = require("../services/todo");
 
 const createTodo = async (req, res, next) => {

@@ -30,10 +30,17 @@ const deleteUser = async (id) => {
   return userResponse;
 }
 
+const login = async (user) => {
+  const loginResponse = await userModel.login(user);
+  
+  return loginResponse;
+}
+
 module.exports = {
   createUser,
   fetchUsers,
   fetchUserById,
   updateUser,
-  deleteUser
+  deleteUser,
+  login
 };

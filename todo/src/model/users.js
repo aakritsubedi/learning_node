@@ -1,4 +1,7 @@
 const db = require("../db");
+
+const jwt = require("../utils/jwt");
+const isValidPassword = require("../utils/verifyHash");
 const createResponse = require("../utils/createResponse");
 
 const createUser = async ({ fullname, email, password }) => {
@@ -65,10 +68,36 @@ const deleteUser = async (id) => {
   return createResponse("failed", `Unable to delete user of id ${id}.`);
 };
 
+const login = async (user) => {
+  const { email, password } = user; 
+  
+  const sql = `SELECT * FROM users WHERE email='${email}'`; 
+
+  const loginResponse = await db.raw(sql);
+  const { rows } = loginResponse;
+  const isValid = isValidPassword(password, rows[0].password);
+
+  if (loginResponse && isValid) {
+    const userData = {
+      email, 
+      password
+    }
+    const token = jwt.prepareJWT(userData, process.env.JWT_EXPIRES_IN);
+    const response = {
+      email: email,
+      token: token
+    }
+    return createResponse("success", response);
+  }
+
+  return createResponse("failed", `Unable to login. Wrong email or password.`);
+}
+
 module.exports = {
   createUser,
   fetchUsers,
   fetchUserById,
   updateUser,
-  deleteUser
+  deleteUser,
+  login
 };
