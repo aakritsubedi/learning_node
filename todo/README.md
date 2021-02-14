@@ -135,3 +135,11 @@ Refer to CRUD functionalities in following files:
 - `Model:` [User Model](./src/model/users.js)
 
 ![CRUD Users](../screenshots/project_04.gif)
+
+Similarly, refer following files for CRUD operation for `todos`: 
+- `Router: ` [Todo Router](./src/routes/todo.js) 
+- `Controller: ` [Todo Controller](./src/controllers/todo.js)
+- `Services: ` [Todo Service](./src/services/todo.js)
+- `Model:` [Todo Model](./src/model/todo.js)
+
+![CRUD Todos](../screenshots/project_05.gif)
