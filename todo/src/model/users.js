@@ -79,7 +79,8 @@ const login = async (user) => {
 
   if (loginResponse && isValid) {
     const userData = {
-      email
+      email: email,
+      userId: rows[0].id,
     }
     const token = jwt.prepareJWT(userData, process.env.JWT_EXPIRES_IN);
     const response = {

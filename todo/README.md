@@ -155,3 +155,63 @@ Refer to this [authenticate middleware](./src/middleware/authenticate.js) used t
 
 ![JWT Token](../screenshots/project_06.gif)
 
+As the scale of this application is so small, so I have added a filter and authorize util function to filter the todos and authorize the logged in users for particular action as following and made necessary changes in various layers of todos. 
+
+```javascript
+// a utility function to filter the filter the todos based on userId
+const filterByUserId = (userId, todos) => {
+  console.log(todos, userId);
+  return todos.filter((todo) => todo.user_id === userId);
+};
+
+// authorize the user to perform various actions
+const isAuthorize = (userId, todo) => {
+  if(todo.user_id === userId) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+```
+
+In this project, I have only authorize fetch todo resources. 
+
+___
+### Demo: *todo-api* 
+![Final Demo](../screenshots/project_final.gif)
+
+___
+### Wrapping Up
+
+We covered A LOT in this mega tutorial. Here’s a list of things we’ve done together:
+
+0. Node.js basics
+1. Understood what Express, Node, and MongoDB are used for
+2. Understood CRUD
+3. Executed Create, Read, Update and Delete operations
+4 Save, read, update, and delete from Postgres
+5. Authentication and Authorization
+6. Display variable data with template engines
+
+We have now learned all you need to know about creating simple applications with Node, Express, and Postgres.  
+
+Now, go forth and create more applications, Mail me at [aakritsubedi9@gmail.com](aakritsubedi9@gmail.com) if you find any difficulties.
+
+### Further reading
+Here’s some further readings if you’re interested to continue with the Node, Express, Postgres journey.  
+
+**Express articles**
+- [3 useful Express middleware](https://zellwk.com/blog/express-middlewares)
+- [Handling Express errors](https://zellwk.com/blog/express-errors)
+- [JavaScript Async/await](https://zellwk.com/blog/async-await)
+- [Using Async/await in Express](https://zellwk.com/blog/async-await-express)
+
+**Postgres articles**
+- [Postgres](https://www.enterprisedb.com/postgres-tutorials) 
+
+**Testing related articles**
+- [Endpoint testing with Jest and Supertest](https://zellwk.com/blog/endpoint-testing)
+
+___
+If you enjoyed this article, please tell a friend about it! Share it on LinkedIn. If you spot a typo, I’d appreciate if you can correct it on GitHub. Thank you!

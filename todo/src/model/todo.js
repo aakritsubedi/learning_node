@@ -1,6 +1,20 @@
 const db = require("../db");
 const createResponse = require("../utils/createResponse");
 
+// a utility function to filter the filter the todos based on userId
+const filterByUserId = (userId, todos) => {
+  return todos.filter((todo) => todo.user_id === userId);
+};
+
+// authorize the user to perform various HTTP methods
+const isAuthorize = (userId, todo) => {
+  if (todo.user_id === userId) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 const createTodo = async ({ title, description, date, userId }) => {
   const sql = `INSERT INTO todos(title, description, date, user_id) VALUES('${title}','${description}', '${date}', ${userId})`;
 
@@ -12,23 +26,30 @@ const createTodo = async ({ title, description, date, userId }) => {
   return createResponse("failed", "Unable to add todo.");
 };
 
-const fetchTodos = async () => {
+const fetchTodos = async (userId) => {
   const sql = "SELECT * FROM todos";
 
   const todoResponse = await db.raw(sql);
   if (todoResponse) {
-    return createResponse("success", todoResponse.rows);
+    return createResponse("success", filterByUserId(userId, todoResponse.rows));
   }
 
   return createResponse("failed", "Unable to fetch all todos.");
 };
 
-const fetchTodoById = async (id) => {
+const fetchTodoById = async (id, userId) => {
   const sql = `SELECT * FROM todos WHERE id =${id}`;
 
   const todoResponse = await db.raw(sql);
   if (todoResponse) {
-    return createResponse("success", todoResponse.rows);
+    if (isAuthorize(todoResponse.rows[0], userId)) {
+      return createResponse("success", todoResponse.rows);
+    }
+
+    return createResponse(
+      "failed",
+      `Unauthorized resources. Unable to access todo with id ${id}.`
+    );
   }
 
   return createResponse("failed", `Unable to fetch todo by id ${id}.`);
@@ -70,5 +91,5 @@ module.exports = {
   fetchTodos,
   fetchTodoById,
   updateTodo,
-  deleteTodo
+  deleteTodo,
 };

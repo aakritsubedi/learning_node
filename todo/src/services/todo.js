@@ -6,14 +6,14 @@ const createTodo = async (todo) => {
   return todoResponse;
 };
 
-const fetchTodos = async () => {
-  const todoResponse = await todoModel.fetchTodos();
+const fetchTodos = async (userId) => {
+  const todoResponse = await todoModel.fetchTodos(userId);
 
   return todoResponse;
 };
 
-const fetchTodoById = async (id) => {
-  const todoResponse = await todoModel.fetchTodoById(id);
+const fetchTodoById = async (id, userId) => {
+  const todoResponse = await todoModel.fetchTodoById(id, userId);
 
   return todoResponse;
 };
@@ -28,12 +28,12 @@ const deleteTodo = async (id) => {
   const todoResponse = await todoModel.deleteTodo(id);
 
   return todoResponse;
-}
+};
 
 module.exports = {
   createTodo,
   fetchTodos,
   fetchTodoById,
   updateTodo,
-  deleteTodo
+  deleteTodo,
 };

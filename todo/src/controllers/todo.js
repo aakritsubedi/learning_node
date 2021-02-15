@@ -13,8 +13,9 @@ const createTodo = async (req, res, next) => {
 };
 
 const fetchTodos = async (req, res, next) => {
+  const userId = req.userId;
   try {
-    const todoResponse = await todoService.fetchTodos();
+    const todoResponse = await todoService.fetchTodos(userId);
 
     res.status(200).json(todoResponse);
   } catch (err) {
@@ -24,9 +25,10 @@ const fetchTodos = async (req, res, next) => {
 
 const fetchTodoById = async (req, res, next) => {
   const id = req.params.id;
+  const userId = req.userId;
 
   try {
-    const todoResponse = await todoService.fetchTodoById(id);
+    const todoResponse = await todoService.fetchTodoById(id, userId);
 
     res.status(200).json(todoResponse);
   } catch (err) {
