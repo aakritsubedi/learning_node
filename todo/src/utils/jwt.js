@@ -10,12 +10,7 @@ const prepareJWT = (payload, expiresIn) => {
 };
 
 const verifyJWT = (token) => {
-  let decoded;
-  try {
-    decoded = jwt.verify(token, process.env.JWT_SECRET);
-  } catch (err) {
-    return createResponse("failed", "Failed to validate token.");
-  }
+  const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
   return createResponse("success", decoded);
 };

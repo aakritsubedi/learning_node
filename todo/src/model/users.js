@@ -79,11 +79,11 @@ const login = async (user) => {
 
   if (loginResponse && isValid) {
     const userData = {
-      email, 
-      password
+      email
     }
     const token = jwt.prepareJWT(userData, process.env.JWT_EXPIRES_IN);
     const response = {
+      userId: rows[0].id,
       email: email,
       token: token
     }

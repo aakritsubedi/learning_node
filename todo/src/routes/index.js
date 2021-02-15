@@ -4,8 +4,10 @@ const userRouter = require('./users');
 const todoRouter = require('./todo');
 const authRouter = require('./auth');
 
-router.use('/users', userRouter);
-router.use('/todos', todoRouter);
+const authenticate = require('../middleware/authenticate');
+
+router.use('/users', authenticate, userRouter);
+router.use('/todos', authenticate, todoRouter);
 router.use('/login', authRouter);
 
 // Display Basic App Information

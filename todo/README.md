@@ -143,3 +143,15 @@ Similarly, refer following files for CRUD operation for `todos`:
 - `Model:` [Todo Model](./src/model/todo.js)
 
 ![CRUD Todos](../screenshots/project_05.gif)
+
+- **Authentication**
+*securing RESTful APIs with {JSON Web Token}*
+
+JSON Web Token (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature (JWS) structure or as the plaintext of a JSON Web Encryption (JWE) structure, enabling the claims to be digitally signed or integrity protected with a Message Authentication Code (MAC) and/or encrypted.  
+
+Simply, a JWT is an encoded string of characters which is safe to send between two computers if they both have HTTPS. The token represents a value that is accessible only by the computer that has access to the secret key with which it was encrypted.
+
+Refer to this [authenticate middleware](./src/middleware/authenticate.js) used to provide access to the API system and [jwt utils](./src/utils/jwt.js) which uses package `jsonwebtoken` to validate and sign the token for the end users.
+
+![JWT Token](../screenshots/project_06.gif)
+
