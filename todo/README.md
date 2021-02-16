@@ -177,6 +177,11 @@ const isAuthorize = (userId, todo) => {
 
 In this project, I have only authorize fetch todo resources. 
 
+- **Accessing Static Files**
+to access the static files inside `/public/assets/`, simply write a complete filename as shown in example below.
+
+[http://127.0.0.1:3000/api/buyMeCoffee.png](http://127.0.0.1:3000/api/buyMeCoffee.png)
+
 ___
 ### Demo: *todo-api* 
 ![Final Demo](../screenshots/project_final.gif)
