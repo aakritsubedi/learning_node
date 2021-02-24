@@ -1,1 +1,0 @@
-web: node todo/src/index.js
