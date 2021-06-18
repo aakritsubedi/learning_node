@@ -1,7 +1,7 @@
-const { getTodos, getTodoById, addTodo, updateTodo, deleteTodo } = require('./services/todo.service');
+const todoService = require('../services/todo.service');
 
 const getTodos = async (request, reply) => {
-  const todos = await getTodos();
+  const todos = await todoService.getTodos();
 
   return todos;
 }
@@ -9,7 +9,7 @@ const getTodos = async (request, reply) => {
 const getTodoById = async (request, reply) => {
   const id = request.params.id;
 
-  const todo = await getTodoById(id);
+  const todo = await todoService.getTodoById(id);
 
   return todo;
 }
@@ -17,16 +17,16 @@ const getTodoById = async (request, reply) => {
 const addTodo = async (request, reply) => {
   const todo = request.body;
 
-  const todo = await addTodo(todo);
+  const newTodo = await todoService.addTodo(todo);
 
-  return todo;
+  return newTodo;
 }
 
 const updateTodo = async (request, reply) => {
   const id = request.params.id;
   const updatedTodo = request.body;
 
-  const todo = await updateTodo(id, updatedTodo);
+  const todo = await todoService.updateTodo(id, updatedTodo);
   
   return todo;
 }
@@ -34,7 +34,7 @@ const updateTodo = async (request, reply) => {
 const deleteTodo = async (request, reply) => {
   const id = request.params.id;
 
-  const todo = deleteTodo(id);
+  const todo = todoService.deleteTodo(id);
 
   return todo;
 }
