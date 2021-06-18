@@ -1,0 +1,24 @@
+{
+  "name": "learning-fastify",
+  "version": "1.0.0",
+  "description": "Learning Fastify",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "NodeJs",
+    "Fastify"
+  ],
+  "author": "AAkrit Subedi",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "fastify": "^3.18.0",
+    "mongoose": "^5.12.14"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
