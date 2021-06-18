@@ -32,4 +32,5 @@ Node.js is an open-source, cross-platform, back-end JavaScript runtime environme
 
 | SN | TItle    |      Code      |
 |----|----------|-----------------|
-|1 |Todo Application| Demo:[Todo API](todo) |
+|1 |Todo Application using Express| Demo:[Todo API using express](todo) |
+|2 |Todo Application using Fastify| Demo:[Todo API using fastify](todo-fastify) |
