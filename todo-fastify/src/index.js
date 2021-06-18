@@ -2,6 +2,9 @@ const fastify = require("fastify")({
   logger: true,
 });
 
+// Database
+const db = require('./db');
+
 // Routes
 fastify.get("/", async (request, reply) => {
   return {
