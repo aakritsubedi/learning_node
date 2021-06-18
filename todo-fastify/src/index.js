@@ -5,7 +5,12 @@ const fastify = require("fastify")({
 // Database
 const db = require('./db');
 
+
 // Routes
+const routes = require('./routes');
+routes.forEach((route, index) => {
+  fastify.route(route);
+});
 fastify.get("/", async (request, reply) => {
   return {
     app: "Learning Fastify",

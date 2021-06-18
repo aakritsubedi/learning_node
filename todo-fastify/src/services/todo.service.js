@@ -3,7 +3,7 @@ const Todo = require("../models/Todo");
 const getTodos = async () => {
   try {
     const todos = await Todo.find();
-
+ 
     return todos;
   } catch (err) {
     throw err;
@@ -22,10 +22,10 @@ const getTodoById = async (id) => {
 
 const addTodo = async (todo) => {
   try {
-    const todo =  new Todo(todo);
-    todo.save();
+    const newTodo =  new Todo(todo);
+    await Todo.create(newTodo);
 
-    return todo;
+    return newTodo;
   }
   catch (err) {
     throw err;
