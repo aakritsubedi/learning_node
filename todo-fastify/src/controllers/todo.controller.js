@@ -3,7 +3,7 @@ const todoService = require('../services/todo.service');
 const getTodos = async (request, reply) => {
   const todos = await todoService.getTodos();
 
-  return todos;
+  reply.send(todos);
 }
 
 const getTodoById = async (request, reply) => {
@@ -11,7 +11,7 @@ const getTodoById = async (request, reply) => {
 
   const todo = await todoService.getTodoById(id);
 
-  return todo;
+  reply.send(todo);
 }
 
 const addTodo = async (request, reply) => {
