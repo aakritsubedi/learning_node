@@ -1,0 +1,5 @@
+# Configuration files
+config/default.ts
+
+# Dependencies
+node_modules

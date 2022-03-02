@@ -30,7 +30,12 @@ Node.js is an open-source, cross-platform, back-end JavaScript runtime environme
 
 ##### [Todo Application](todo)
 
-| SN | TItle    |      Code      |
+| SN | Title    |      Code      |
 |----|----------|-----------------|
 |1 |Todo Application using Express| Demo:[Todo API using express](todo) |
 |2 |Todo Application using Fastify| Demo:[Todo API using fastify](todo-fastify) |
+
+#### [NodeJs + TypeScript](ts-node) 
+| SN | Title    |      Code      |
+|----|----------|-----------------|
+|1 |Sample Application using Express + TS| Demo:[Todo API using Express + TS](ts-node) |
